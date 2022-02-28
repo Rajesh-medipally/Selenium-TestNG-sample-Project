@@ -1,0 +1,10 @@
+This application is a sample framework
+
+this includes
+
+selenium
+testNG
+java
+automating test cases
+custom reporting
+         
