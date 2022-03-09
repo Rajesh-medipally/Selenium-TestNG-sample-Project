@@ -31,7 +31,6 @@ public class ReadConfig {
 	public String getChromePath() {return properties.getProperty("chromepath");}
 	public String getFirefoxPath() {return properties.getProperty("firefoxpath"); }
 	public String getIEPath() {return properties.getProperty("iepath");}
-	public String getUserId() {return properties.getProperty("userId");}
 	public String getPassword() {return properties.getProperty("password");}	
 	
 	

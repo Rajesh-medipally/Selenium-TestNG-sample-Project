@@ -13,23 +13,25 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 
+import com.seleniumProject.pageObjects.HomePage;
 import com.seleniumProject.utilities.ReadConfig;
 
 
 public class Base {
-	ReadConfig readConfig = new ReadConfig();
+	 public ReadConfig readConfig = new ReadConfig();
 	
 	
 	//public String baseUrl =readConfig.getApplicationURL();
-	public String emailId=readConfig.getEmailId();
-	 public static WebDriver driver;
-	public static Logger logger; 
+	protected String emailId=readConfig.getEmailId();
+	protected String password = readConfig.getPassword();
+	protected static WebDriver driver;
+	protected static Logger logger; 
 	
 	@Parameters("browser")
 	@BeforeClass
 	public void setup(String br) {
 		//logger configuration
-		logger = Logger.getLogger("ebanking");
+		logger = Logger.getLogger("automation practice ");
 		PropertyConfigurator.configure("log4j.properties");
 		
 		//browser selection
@@ -46,6 +48,7 @@ public class Base {
 		
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
 		driver.get(readConfig.getApplicationURL());
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
 				
 	}
 	@AfterClass
